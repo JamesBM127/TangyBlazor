@@ -4,6 +4,7 @@
     <div>
         <input type="checkbox" @onchange="FavoriteUpdated" /> Add to Favorite <br />
         Name - @Product.Name <br />
+        RF from Parent - @RenderFragment1 @RenderFragment2
     </div>
     <div>
         <div>
@@ -29,6 +30,12 @@
 @code {
     [Parameter]
     public Demo_Product Product { get; set; }
+
+    [Parameter]
+    public RenderFragment RenderFragment1 { get; set; }
+
+    [Parameter]
+    public RenderFragment RenderFragment2 { get; set; }
 
     [Parameter]
     public EventCallback<bool> OnFavoriteUpdated { get; set; }
